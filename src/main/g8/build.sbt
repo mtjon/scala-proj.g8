@@ -15,11 +15,13 @@ $endif$
 lazy val $project;format="camel"$ = Project(
   id = "$project;format="camel"$",
   base = file("$project;format="norm"$"))
-  .enablePlugins(PackPlugin) // TODO: Make optional based on giter8
+  $if(use_pack.truthy)$.enablePlugins(PackPlugin)$endif$
   .settings(version := "$version$")
+  $if(use_pack.truthy)$
   .settings(
     packMain := Map("$project;format="norm"$" -> "$organization;format="package"$.$project;format="Camel"$"),
   )
+  $endif$
   .settings(
     libraryDependencies ++= loggingDependencies$if(use_protobuf.truthy)$ ++ protobufDependencies$endif$
   )
