@@ -31,7 +31,6 @@ push:
 	docker push $(IMAGE)
 show:
 	@echo "#make file configuration"
-	@echo "#PLATFORM         : " $(PLATFORM)
 	@echo "#DOCKER_REPO_USER : " $(DOCKER_REPO_USER)
 	@echo "#UID              : " $(UID)
 	@echo "#DOCKER_REPO_URL  : " $(DOCKER_REPO_URL)
